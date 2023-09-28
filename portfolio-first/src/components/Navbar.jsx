@@ -62,12 +62,12 @@ const Navbar = () => {
     <div className='hidden  lg:flex flex fixed flex-col top-[35%] left-0'>
         <ul>
             <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
-                <a className='flex justify-between items-center w-full text-gray-300  ' href="https://www.linkedin.com/in/mohat-shil/">
+                <a className='flex justify-between items-center w-full text-gray-300  ' href="https://www.linkedin.com/in/mohan-shil/">
                     Linkedin <FaLinkedin size={30}/>
                 </a>
             </li>
             <li className='w-[160px] h-[60px] flex justify-between items-center  ml-[-100px] hover:ml-[-10px] duration-300 bg-gray-500'>
-                <a className='flex justify-between items-center w-full text-gray-300 ' href="https://github.com/shilCode/">
+                <a className='flex justify-between items-center w-full text-gray-300 ' href="https://github.com/mohan-shil">
                     Github <FaGithub size={30}/>
                 </a>
             </li>
@@ -80,7 +80,7 @@ const Navbar = () => {
                 </a>
             </li>
             <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
-                <a className='flex justify-between items-center w-full text-gray-300  ' href="https://drive.google.com/file/d/11lWLRzGe7cy0zSdUYdx5O-JmVX3cOY1C/view?usp=sharing">
+                <a className='flex justify-between items-center w-full text-gray-300  ' href="https://drive.google.com/file/d/1bsxSkpxLA6XorEGsAVtjg9oqIX2eO4WN/view?usp=drive_link">
                     Resume <BsFillPersonLinesFill size={30}/>
                 </a>
             </li>
