@@ -15,11 +15,14 @@ function About() {
                <div className='sm:text-right text-4xl font-bold '>
                <p>Hi. I am Mohan 👋🏽              
                </p>
-               <img src='https://media.giphy.com/media/3o7aCV48hSigaq5Yk0/giphy.gif' alt='Giphy' className='max-w-full' />
+               <img src="https://media.giphy.com/media/5qZEZ0rTln9581K7Q5/giphy.gif" alt='Giphy' className='max-w-full' />
                
                 
                </div>
                <div><p>
+                <br />
+                <br />
+                <br />
                A motivated and enthusiastic job seeker with a strong desire to learn andgrow.
                 Eager to contribute to a dynamic team and gain practical experience. 
                 Possesses excellent communication and interpersonal skills, 
