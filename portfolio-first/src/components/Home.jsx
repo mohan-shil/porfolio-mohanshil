@@ -3,7 +3,7 @@ import cv from '../assets/Resume.pdf'
 
 const Home = () => {
   return (
-    <div name='home' className='w-full h-screen bg-[#281132]'>
+    <div name='home' className='w-full h-screen bg-[#3c1053]'>
     
     {/* Container */}
     <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>

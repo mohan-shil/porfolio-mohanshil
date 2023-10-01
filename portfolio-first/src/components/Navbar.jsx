@@ -9,7 +9,7 @@ const Navbar = () => {
     const [nav,setNav] = useState(false)
     const handleCLick = () => setNav(!nav)
   return (
-    <div className='fixed w-full h-[100px] flex justify-between px-4 bg-[#281132]
+    <div className='fixed w-full h-[100px] flex justify-between px-4 bg-[#3c1053]
      text-gray-300 pt-4'>
 
         <div>
