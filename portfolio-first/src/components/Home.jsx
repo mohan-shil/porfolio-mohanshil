@@ -1,5 +1,5 @@
 import React from 'react'
-import cv from '../assets/Resume.pdf'
+import cv from '../assets/mohan-shil.pdf'
 
 const Home = () => {
   return (
