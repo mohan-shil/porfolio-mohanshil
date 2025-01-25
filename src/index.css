@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+@layer components {
+  .global-container {
+    @apply max-w-[1000px] mx-auto px-8 flex justify-between h-full font-mono text-white;
+  }
+}
