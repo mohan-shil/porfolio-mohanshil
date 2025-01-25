@@ -1,5 +1,3 @@
-import React from "react";
-
 const TechStack = () => {
   return (
     <div className="bg-gray-900 text-white p-8" id="technology-stack">
