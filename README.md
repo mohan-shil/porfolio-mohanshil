@@ -1,6 +1,6 @@
 # Mohan Online CV/Resume/Presence
 
-link: https://mohan-shil-resume.vercel.app/
+link: https://mohanshil.vercel.app/
 
 Run using npm
 
