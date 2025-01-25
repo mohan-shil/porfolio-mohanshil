@@ -1,5 +1,5 @@
 import logo from "../assets/logo.jpg";
-
+import cv from "../assets/QA_CV.pdf";
 const Hero = () => {
   return (
     <div
@@ -18,8 +18,16 @@ const Hero = () => {
           such as Playwright, WebdriverIO, and Cypress. My skill set extends to
           leveraging tools like GitHub Actions and encompasses a broad range of
           testing practices, including functional testing, mobile testing (iOS
-          and Android), API testing, and game testing
+          and Android), API testing, and game testing.
         </p>
+        <br />
+        <a
+          href={cv}
+          download
+          className="bg-yellow-500 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded"
+        >
+          Download My CV
+        </a>
       </div>
     </div>
   );
