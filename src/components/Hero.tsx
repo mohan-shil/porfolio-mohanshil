@@ -1,14 +1,11 @@
+import logo from "../assets/logo.jpg";
 const Hero = () => {
   return (
     <div
       className="bg-gray-900 text-white h-screen flex flex-col justify-center items-center"
       id="home"
     >
-      <img
-        src="/assets/logo.jpg"
-        alt="Logo"
-        className="w-32 h-32 mb-4 rounded-full"
-      />
+      <img src={logo} alt="Logo" className="w-32 h-32 mb-4 rounded-full" />
       <h1 className="text-4xl font-bold mb-2">Hi 👋🏽 I'm Mohan Shil</h1>
       <p className="text-xl">QA Engineer</p>
       <br />
