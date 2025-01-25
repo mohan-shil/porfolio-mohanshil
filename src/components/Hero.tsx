@@ -5,7 +5,7 @@ const Hero = () => {
       id="home"
     >
       <img
-        src="/public/logo.jpg"
+        src={"/assets/logo.jpg"}
         alt="Logo"
         className="w-32 h-32 mb-4 rounded-full"
       />
