@@ -19,9 +19,9 @@ const TechStack = () => {
               <td className="border px-2 sm:px-4 py-2">Testing</td>
               <td className="border px-2 sm:px-4 py-2">
                 <ul className="list-disc list-inside">
-                  <li>Playwright (NodeJs)</li>
-                  <li>Cypress (NodeJs)</li>
-                  <li>Webdriver (NodeJs)</li>
+                  <li>Playwright (Node.js)</li>
+                  <li>Cypress (Node.js)</li>
+                  <li>Webdriver (Node.js)</li>
                   <li>Lighthouse (Accessibility Testing Tool)</li>
                 </ul>
               </td>

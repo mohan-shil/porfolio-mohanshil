@@ -1,7 +1,7 @@
 const Specialization = () => {
   return (
     <div id="specialization" className="bg-gray-900 text-white p-4 sm:p-16">
-      <h2 className="text-3xl font-bold mb-4">Specialization ♟️</h2>
+      <h2 className="text-3xl font-bold mb-4 text-green-500">Specialization ♟️</h2>
       <div className="text-sm sm:text-lg leading-relaxed">
         <ul className="list-disc list-inside">
           <li>Creating customized test plans, test strategies, test cases, and bug reports</li>
