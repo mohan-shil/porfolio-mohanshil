@@ -1,8 +1,8 @@
 const Experience = () => {
   return (
-    <div id="experience" className="bg-gray-900 text-white p-16">
+    <div id="experience" className="bg-gray-900 text-white p-4 sm:p-16">
       <h2 className="text-3xl font-bold mb-4">Experience 🔬</h2>
-      <div className="text-lg leading-relaxed">
+      <div className="text-sm sm:text-lg leading-relaxed">
         <h3 className="text-2xl font-semibold mb-2">
           Eastern Group, Bangladesh— QA Engineer
         </h3>

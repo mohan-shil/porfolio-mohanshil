@@ -1,23 +1,23 @@
 const TechStack = () => {
   return (
-    <div className="bg-gray-900 text-white p-16" id="technology-stack">
+    <div className="bg-gray-900 text-white p-4 sm:p-16" id="technology-stack">
       <h2 className="text-3xl font-bold mb-4 text-yellow-500">Technology Stack</h2>
-      <div className="text-lg leading-relaxed">
+      <div className="text-sm sm:text-lg leading-relaxed">
         <table className="table-auto w-full">
           <thead>
             <tr>
-              <th className="px-4 py-2">Category</th>
-              <th className="px-4 py-2">Technologies</th>
+              <th className="px-2 sm:px-4 py-2">Category</th>
+              <th className="px-2 sm:px-4 py-2">Technologies</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border px-4 py-2">Programming Languages</td>
-              <td className="border px-4 py-2">JavaScript/TypeScript</td>
+              <td className="border px-2 sm:px-4 py-2">Programming Languages</td>
+              <td className="border px-2 sm:px-4 py-2">JavaScript/TypeScript</td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">Testing</td>
-              <td className="border px-4 py-2">
+              <td className="border px-2 sm:px-4 py-2">Testing</td>
+              <td className="border px-2 sm:px-4 py-2">
                 <ul className="list-disc list-inside">
                   <li>Playwright (NodeJs)</li>
                   <li>Cypress (NodeJs)</li>
@@ -27,8 +27,8 @@ const TechStack = () => {
               </td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">Tools</td>
-              <td className="border px-4 py-2">
+              <td className="border px-2 sm:px-4 py-2">Tools</td>
+              <td className="border px-2 sm:px-4 py-2">
                 <ul className="list-disc list-inside">
                   <li>GIT</li>
                   <li>JENKINS</li>

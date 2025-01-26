@@ -1,9 +1,9 @@
 const Contact = () => {
   return (
-    <div id="contact" className="bg-gray-900 text-white p-16">
+    <div id="contact" className="bg-gray-900 text-white p-4 sm:p-16">
       <h2 className="text-3xl font-bold mb-4">Contact</h2>
 
-      <div className="text-lg leading-relaxed">
+      <div className="text-sm sm:text-lg leading-relaxed">
         <p className="mb-4">
           Email:{" "}
           <a href="mailto:mohan.shil.007@gmail.com" className="text-blue-400">

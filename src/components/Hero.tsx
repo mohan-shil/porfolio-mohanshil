@@ -1,17 +1,18 @@
 import logo from "../assets/logo.jpg";
 import cv from "../assets/QA_CV.pdf";
+
 const Hero = () => {
   return (
     <div
-      className="bg-gray-900 text-white h-screen flex flex-col justify-center items-center"
+      className="bg-gray-900 text-white h-screen flex flex-col justify-center items-center p-4 sm:p-8"
       id="home"
     >
-      <img src={logo} alt="Logo" className="w-32 h-32 mb-4 rounded-full" />
-      <h1 className="text-4xl font-bold mb-2">Hi 👋🏽 I'm Mohan Shil</h1>
-      <p className="text-xl">QA Engineer</p>
+      <img src={logo} alt="Logo" className="w-24 h-24 sm:w-32 sm:h-32 mb-4 rounded-full" />
+      <h1 className="text-3xl sm:text-4xl font-bold mb-2">Hi 👋🏽 I'm Mohan Shil</h1>
+      <p className="text-lg sm:text-xl">QA Engineer</p>
       <br />
-      <div className="max-w-2xl text-center">
-        <p>
+      <div className="max-w-xl text-center">
+        <p className="text-sm sm:text-base">
           As a QA Automation Tester with three years of experience in testing
           web and mobile applications, I bring a strong foundation in TypeScript
           and JavaScript, along with expertise in test automation frameworks
