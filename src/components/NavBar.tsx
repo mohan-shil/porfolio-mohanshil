@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaHome, FaTools, FaBriefcase, FaEnvelope } from "react-icons/fa";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,17 +13,17 @@ const NavBar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-3xl">❤️</div>
         <div className="hidden md:flex space-x-4">
-          <a href="#home" className="hover:text-gray-400">
-            Home
+          <a href="#home" className="hover:text-gray-400 flex items-center">
+            <FaHome className="mr-1" /> Home
           </a>
-          <a href="#technology-stack" className="hover:text-gray-400">
-            Tech-Stack
+          <a href="#technology-stack" className="hover:text-gray-400 flex items-center">
+            <FaTools className="mr-1" /> Tech-Stack
           </a>
-          <a href="#experience" className="hover:text-gray-400">
-            Experience
+          <a href="#experience" className="hover:text-gray-400 flex items-center">
+            <FaBriefcase className="mr-1" /> Experience
           </a>
-          <a href="#contact" className="hover:text-gray-400">
-            Contact
+          <a href="#contact" className="hover:text-gray-400 flex items-center">
+            <FaEnvelope className="mr-1" /> Contact
           </a>
         </div>
         <div className="md:hidden">
@@ -36,31 +36,31 @@ const NavBar = () => {
         <div className="fixed inset-0 bg-gray-800 bg-opacity-90 text-white flex flex-col items-center justify-center space-y-4">
           <a
             href="#home"
-            className="text-2xl hover:text-gray-400"
+            className="text-2xl hover:text-gray-400 flex items-center"
             onClick={toggleMenu}
           >
-            Home
+            <FaHome className="mr-2" /> Home
           </a>
           <a
             href="#technology-stack"
-            className="text-2xl hover:text-gray-400"
+            className="text-2xl hover:text-gray-400 flex items-center"
             onClick={toggleMenu}
           >
-            Tech-Stack
+            <FaTools className="mr-2" /> Tech-Stack
           </a>
           <a
             href="#experience"
-            className="text-2xl hover:text-gray-400"
+            className="text-2xl hover:text-gray-400 flex items-center"
             onClick={toggleMenu}
           >
-            Experience
+            <FaBriefcase className="mr-2" /> Experience
           </a>
           <a
             href="#contact"
-            className="text-2xl hover:text-gray-400"
+            className="text-2xl hover:text-gray-400 flex items-center"
             onClick={toggleMenu}
           >
-            Contact
+            <FaEnvelope className="mr-2" /> Contact
           </a>
         </div>
       )}
