@@ -33,31 +33,31 @@ const NavBar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-gray-800 text-white p-4">
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-90 text-white flex flex-col items-center justify-center space-y-4">
           <a
             href="#home"
-            className="block py-2 hover:text-gray-400"
+            className="text-2xl hover:text-gray-400"
             onClick={toggleMenu}
           >
             Home
           </a>
           <a
             href="#technology-stack"
-            className="block py-2 hover:text-gray-400"
+            className="text-2xl hover:text-gray-400"
             onClick={toggleMenu}
           >
             Tech-Stack
           </a>
           <a
             href="#experience"
-            className="block py-2 hover:text-gray-400"
+            className="text-2xl hover:text-gray-400"
             onClick={toggleMenu}
           >
             Experience
           </a>
           <a
             href="#contact"
-            className="block py-2 hover:text-gray-400"
+            className="text-2xl hover:text-gray-400"
             onClick={toggleMenu}
           >
             Contact
