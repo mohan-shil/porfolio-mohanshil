@@ -42,18 +42,18 @@ const NavBar = () => {
             Home
           </a>
           <a
-            href="#about"
+            href="#technology-stack"
             className="block py-2 hover:text-gray-400"
             onClick={toggleMenu}
           >
-            About
+            Tech-Stack
           </a>
           <a
-            href="#projects"
+            href="#experience"
             className="block py-2 hover:text-gray-400"
             onClick={toggleMenu}
           >
-            Projects
+            Experience
           </a>
           <a
             href="#contact"
