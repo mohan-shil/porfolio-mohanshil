@@ -12,7 +12,7 @@ import { SiTypescript, SiPostman, SiMeteor } from "react-icons/si";
 
 const TechStack = () => {
   return (
-    <div className="bg-gray-900 text-white p-4 sm:p-16" id="technology-stack">
+    <div className="bg-gray-900 text-gray-200 p-4 sm:p-16" id="technology-stack">
       <h2 className="text-3xl font-bold mb-4 text-yellow-500">
         Technology Stack
       </h2>

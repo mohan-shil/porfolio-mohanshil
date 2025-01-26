@@ -1,14 +1,50 @@
 import logo from "../assets/logo.jpg";
 import cv from "../assets/QA_CV.pdf";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [animateLogo, setAnimateLogo] = useState(true);
+  const [animateName, setAnimateName] = useState(true);
+
+  useEffect(() => {
+    const logoTimer = setTimeout(() => {
+      setAnimateLogo(false);
+    }, 2000); // Animation duration: 2 seconds
+
+    const nameTimer = setTimeout(() => {
+      setAnimateName(false);
+    }, 2000); // Animation duration: 2 seconds
+
+    return () => {
+      clearTimeout(logoTimer);
+      clearTimeout(nameTimer);
+    };
+  }, []);
+
   return (
     <div
-      className="bg-gray-900 text-white h-screen flex flex-col justify-center items-center p-4 sm:p-8"
+      className="bg-gray-900 text-gray-200 h-screen flex flex-col justify-center items-center p-4 sm:p-8"
       id="home"
     >
-      <img src={logo} alt="Logo" className="w-24 h-24 sm:w-32 sm:h-32 mb-4 rounded-full shadow-lg" />
-      <h1 className="text-4xl sm:text-5xl font-extrabold mb-2 text-center">Hi 👋🏽 I'm Mohan Shil</h1>
+      <img
+        src={logo}
+        alt="Logo"
+        className={`w-24 h-24 sm:w-32 sm:h-32 mb-4 rounded-full shadow-lg transition-transform duration-500 ${
+          animateLogo ? "transform scale-110 animate-pulse" : ""
+        }`}
+        style={{
+          filter: animateLogo
+            ? "hue-rotate(360deg) saturate(200%)"
+            : "none",
+        }}
+      />
+      <h1
+        className={`text-4xl sm:text-5xl font-extrabold mb-2 text-center transition-colors duration-500 ${
+          animateName ? "text-red-500" : ""
+        }`}
+      >
+        Hi 👋🏽 I'm Mohan Shil
+      </h1>
       <p className="text-xl sm:text-2xl mb-4 text-center">QA Engineer</p>
       <div className="max-w-xl text-center">
         <p className="text-base sm:text-lg leading-relaxed mb-6">
