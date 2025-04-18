@@ -1,70 +1,89 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import logo from "../assets/logo.jpg";
 import cv from "../assets/QA_CV.pdf";
-import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [animateLogo, setAnimateLogo] = useState(true);
-  const [animateName, setAnimateName] = useState(true);
-
-  useEffect(() => {
-    const logoTimer = setTimeout(() => {
-      setAnimateLogo(false);
-    }, 2000); // Animation duration: 2 seconds
-
-    const nameTimer = setTimeout(() => {
-      setAnimateName(false);
-    }, 2000); // Animation duration: 2 seconds
-
-    return () => {
-      clearTimeout(logoTimer);
-      clearTimeout(nameTimer);
-    };
-  }, []);
+  const [loop] = useState(true);
+  const [text] = useTypewriter({
+    words: [
+      "QA Engineer",
+      "Automation Tester",
+      "Functional & Mobile Tester",
+    ],
+    loop: loop,
+    delaySpeed: 2000,
+  });
 
   return (
-    <div
-      className="bg-gray-900 text-gray-200 h-screen flex flex-col justify-center items-center p-4 sm:p-8"
+    <motion.section
       id="home"
+      className="relative overflow-hidden bg-gradient-to-r from-gray-800 via-gray-900 to-black h-screen flex flex-col justify-center items-center text-center p-4 sm:p-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      <img
+      {/* Animated Background Blobs */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/2 w-72 h-72 bg-yellow-600 rounded-full animate-ping mix-blend-multiply filter blur-2xl opacity-30" />
+        <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-orange-500 rounded-full animate-pulse mix-blend-multiply filter blur-2xl opacity-20" />
+      </div>
+
+      {/* Logo Animation */}
+      <motion.img
         src={logo}
         alt="Logo"
-        className={`w-24 h-24 sm:w-32 sm:h-32 mb-4 rounded-full shadow-lg transition-transform duration-500 ${
-          animateLogo ? "transform scale-110 animate-pulse" : ""
-        }`}
-        style={{
-          filter: animateLogo
-            ? "hue-rotate(360deg) saturate(200%)"
-            : "none",
-        }}
+        className="w-28 h-28 sm:w-36 sm:h-36 mb-6 rounded-full shadow-2xl"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 120, damping: 10, delay: 0.5 }}
       />
-      <h1
-        className={`text-4xl sm:text-5xl font-extrabold mb-2 text-center transition-colors duration-500 ${
-          animateName ? "text-red-500" : ""
-        }`}
+
+      {/* Name Typing Effect */}
+      <motion.h1
+        className="text-4xl sm:text-5xl font-bold text-yellow-300 mb-2"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
       >
         Hi 👋🏽 I'm Mohan Shil
-      </h1>
-      <p className="text-xl sm:text-2xl mb-4 text-center">QA Engineer</p>
-      <div className="max-w-xl text-center">
-        <p className="text-base sm:text-lg leading-relaxed mb-6">
-          As a QA Automation Tester with three years of experience in testing
-          web and mobile applications, I bring a strong foundation in TypeScript
-          and JavaScript, along with expertise in test automation frameworks
-          such as Playwright, WebdriverIO, and Cypress. My skill set extends to
-          leveraging tools like GitHub Actions and encompasses a broad range of
-          testing practices, including functional testing, mobile testing (iOS
-          and Android), API testing, and game testing.
-        </p>
-        <a
-          href={cv}
-          download
-          className="bg-yellow-500 hover:bg-yellow-700 text-gray-900 font-bold py-2 px-4 rounded shadow-lg transition duration-300"
-        >
-          Download My CV
-        </a>
-      </div>
-    </div>
+      </motion.h1>
+
+      <motion.h2
+        className="text-2xl sm:text-3xl font-medium text-white mb-4"
+        initial={{ y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+      >
+        {text}
+        <Cursor cursorColor="#FFBF50" />
+      </motion.h2>
+
+      {/* Intro Paragraph */}
+      <motion.p
+        className="max-w-lg text-base sm:text-lg leading-relaxed text-gray-300 mb-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 2 }}
+      >
+        As a QA Automation Tester with three years of expertise, I specialize in crafting robust, scalable test suites for web and mobile platforms using Playwright, WebdriverIO, Cypress, and GitHub Actions. Let’s build rock-solid user experiences together!
+      </motion.p>
+
+      {/* Download CV Button */}
+      <motion.a
+        href={cv}
+        download
+        className="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 12, delay: 2.5 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Download My CV
+      </motion.a>
+    </motion.section>
   );
 };
 
