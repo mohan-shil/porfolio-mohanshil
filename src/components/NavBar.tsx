@@ -16,7 +16,7 @@ const NavBar = () => {
             <FaHome className="mr-2" /> 
           </a>
         </div>
-        <div className="md:flex space-x-8 text-lg font-medium">
+        <div className="hidden md:flex space-x-8 text-lg font-medium">
           <a href="#home" className="hover:text-yellow-400 transition duration-300 flex items-center">
             <FaHome className="mr-2" /> Home
           </a>
