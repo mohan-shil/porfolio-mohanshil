@@ -39,34 +39,35 @@ const NavBar = () => {
       
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-80 backdrop-blur-lg text-white flex flex-col items-center justify-center space-y-6 py-8 transition-all duration-500">
+          <div className="fixed inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white flex flex-col items-center justify-center space-y-12 py-8 transition-all duration-500 backdrop-blur-lg">
+
           <a
             href="#home"
             className="text-2xl hover:text-yellow-400 transition duration-300"
             onClick={toggleMenu}
           >
-            <FaHome className="mr-2" /> Home
+            <FaHome className="ml-5" /> Home
           </a>
           <a
             href="#technology-stack"
             className="text-2xl hover:text-yellow-400 transition duration-300"
             onClick={toggleMenu}
           >
-            <FaTools className="mr-2" /> Tech-Stack
+            <FaTools className="ml-10" /> Tech-Stack
           </a>
           <a
             href="#experience"
             className="text-2xl hover:text-yellow-400 transition duration-300"
             onClick={toggleMenu}
           >
-            <FaBriefcase className="mr-2" /> Experience
+            <FaBriefcase className="ml-10" /> Experience
           </a>
           <a
             href="#contact"
-            className="text-2xl hover:text-yellow-400 transition duration-300"
+            className="mr-5 text-2xl hover:text-yellow-400 transition duration-300"
             onClick={toggleMenu}
           >
-            <FaEnvelope className="mr-2" /> Contact
+            <FaEnvelope className="ml-8" /> Contact
           </a>
         </div>
       )}
@@ -75,4 +76,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
