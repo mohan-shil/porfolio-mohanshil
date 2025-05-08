@@ -3,28 +3,28 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Test Automation Dashboard",
+    title: "Only Testing",
     description:
-      "An interactive dashboard to visualize automation test results, CI/CD pipeline status, and real-time metrics using React, Chart.js, and Jenkins API.",
-    tech: ["React", "Chart.js", "Jenkins", "CI/CD"],
-    liveLink: "https://demo-automation-dashboard.netlify.app",
-    repo: "https://github.com/yourusername/test-automation-dashboard",
+      "A comprehensive testing platform for web applications, offering a suite of tools for functional, performance, and accessibility testing.",
+    tech: ["Angular", "Playwright", "Jenkins", "CI/CD"],
+    liveLink: "https://testing-site-three.vercel.app/",
+    repo: "https://github.com/mohan-shil/testing_site.git",
   },
   {
-    title: "E2E Test Framework",
+    title: "Simplify Investment",
     description:
-      "Custom-built Playwright framework with integrated reporting, visual regression testing, and reusable components for scalable end-to-end tests.",
-    tech: ["Playwright", "Node.js", "Jest", "TypeScript"],
-    liveLink: "https://playwright-framework-demo.netlify.app",
-    repo: "https://github.com/yourusername/e2e-framework",
+      "A user-friendly investment platform that simplifies the process of managing and tracking investments, featuring a clean UI and robust backend.",
+    tech: ["Angular", "Playwright", "Jenkins", "CI/CD"],
+    liveLink: "https://simplify-investment.vercel.app/",
+    repo: "https://github.com/mohan-shil/simplify-investment.git",
   },
   {
-    title: "Accessibility Checker Tool",
+    title: "Automation Testing for Beginners",
     description:
-      "A lightweight a11y tool for checking WCAG violations in real-time across web pages, using Lighthouse and axe-core under the hood.",
-    tech: ["Lighthouse", "React", "axe-core", "Vite"],
-    liveLink: "https://a11y-checker-demo.netlify.app",
-    repo: "https://github.com/yourusername/a11y-checker",
+      "A beginner-friendly automation testing project using Playwright and React, demonstrating the basics of test automation with a focus on user experience.",
+    tech: ["Playwright", "React", "JavaScript", "Postman"],
+    liveLink: "https://rahulshettyacademy.com/loginpagePractise/",
+    repo: "https://github.com/mohan-shil/Automation_testing_for_beginners.git",
   },
   {
     title: "Test Automation Dashboard",
