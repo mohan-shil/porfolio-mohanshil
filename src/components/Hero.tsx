@@ -31,14 +31,20 @@ const Hero = () => {
       </div>
 
       {/* Logo Animation */}
-      <motion.img
-        src={logo}
-        alt="Logo"
-        className="w-28 h-28 sm:w-36 sm:h-36 mb-6 rounded-full shadow-2xl"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 120, damping: 10, delay: 0.5 }}
-      />
+      <motion.div
+        className="relative mb-6 rounded-full p-1 bg-gradient-to-tr from-yellow-400 via-orange-500 to-pink-500 shadow-xl hover:shadow-2xl transition-all duration-300"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 12, delay: 0.5 }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white"
+        />
+      </motion.div>
+
 
       {/* Name Typing Effect */}
       <motion.h1
