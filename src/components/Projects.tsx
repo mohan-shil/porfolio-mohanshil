@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaExternalLinkAlt, FaGithub, FaTimes } from "react-icons/fa";
 
 const projects = [
   {
@@ -58,7 +59,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
+      delay: i * 0.15,
       duration: 0.6,
       ease: "easeOut",
     },
@@ -66,66 +67,94 @@ const cardVariants = {
 };
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<null | typeof projects[0]>(null);
+
   return (
-    <div id="projects" className="bg-gray-900 text-white py-20 px-4 sm:px-16">
+    <div id="projects" className="bg-gradient-to-br from-slate-900 via-gray-900 to-gray-800 text-white py-20 px-4 sm:px-10 min-h-screen">
       <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-12 text-center"
-        initial={{ opacity: 0, scale: 0.9 }}
+        className="text-4xl sm:text-5xl font-bold text-emerald-400 mb-12 text-center drop-shadow-lg"
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+        transition={{ type: "spring", stiffness: 120 }}
       >
-        Projects 🚀
+        My Projects 🚀
       </motion.h2>
 
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-gray-800 rounded-xl shadow-lg hover:shadow-yellow-500/30 p-6 flex flex-col justify-between"
-            variants={cardVariants}
+            custom={index}
             initial="hidden"
             animate="visible"
-            custom={index}
+            variants={cardVariants}
+            className="bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl hover:shadow-emerald-500/30 transition-all border border-white/10 flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-2xl font-semibold text-yellow-300 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+              <h3 className="text-xl font-semibold text-emerald-300 mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-300 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-yellow-600/30 text-yellow-200 px-2 py-1 rounded-full"
+                    className="bg-emerald-600/20 text-emerald-200 text-xs px-2 py-1 rounded-full"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="flex items-center justify-between mt-4">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-yellow-400 hover:text-yellow-200 flex items-center space-x-1 text-sm"
+            <div className="flex justify-between mt-4 text-sm">
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="text-emerald-400 hover:text-white flex items-center gap-1 transition"
               >
                 <FaExternalLinkAlt />
-                <span>Live Demo</span>
-              </a>
+                <span>Live</span>
+              </button>
               <a
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-yellow-400 hover:text-yellow-200 flex items-center space-x-1 text-sm"
+                className="text-emerald-400 hover:text-white flex items-center gap-1 transition"
               >
                 <FaGithub />
-                <span>GitHub</span>
+                <span>Code</span>
               </a>
             </div>
           </motion.div>
         ))}
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative w-full max-w-5xl h-[80vh] bg-gray-950 rounded-xl overflow-hidden shadow-2xl border border-emerald-500"
+            >
+              <button
+                className="absolute top-3 right-4 text-emerald-300 hover:text-white text-2xl z-10"
+                onClick={() => setSelectedProject(null)}
+              >
+                <FaTimes />
+              </button>
+              <iframe
+                src={selectedProject.liveLink}
+                title={selectedProject.title}
+                className="w-full h-full border-none"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
