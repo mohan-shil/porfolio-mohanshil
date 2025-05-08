@@ -45,6 +45,12 @@ const NavBar = () => {
             <FaTools className="mr-2" /> Tech-Stack
           </a>
           <a
+            href="#projects"
+            className="hover:text-yellow-400 transition duration-300 flex items-center"
+          >
+            <FaTools className="mr-2" /> Projects
+          </a>
+          <a
             href="#experience"
             className="hover:text-yellow-400 transition duration-300 flex items-center"
           >
@@ -86,6 +92,13 @@ const NavBar = () => {
             className="text-2xl hover:text-yellow-400 flex items-center space-x-2"
           >
             <FaTools /> <span>Tech-Stack</span>
+          </a>
+          <a
+            href="#projects"
+            onClick={toggleMenu}
+            className="text-2xl hover:text-yellow-400 flex items-center space-x-2"
+          >
+            <FaTools /> <span>Projects</span>
           </a>
           <a
             href="#experience"

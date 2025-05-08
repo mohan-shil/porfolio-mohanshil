@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import Specialization from "./components/Specialization";
 import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Hero />
       <TechStack />
+      <Projects />
       <Experience />
       <Specialization />
       <Contact />
