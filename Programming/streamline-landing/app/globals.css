@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 135 94% 39%; /* Hacker green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 100% 40%; /* Cyan */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 120 100% 25%; /* Dark green */
+    --accent-foreground: 0 0% 100%;
+
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --primary: 135 94% 39%; /* Hacker green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 100% 40%; /* Cyan */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 120 100% 25%; /* Dark green */
+    --accent-foreground: 0 0% 100%;
+
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .text-gradient-alt {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(to right, theme("colors.primary"), theme("colors.secondary")) 1;
+  }
+
+  .glass {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+
+  .dark .glass {
+    @apply bg-black/40 backdrop-blur-md border border-primary/20;
+  }
+
+  /* Hacker-style animations */
+  .glitch {
+    position: relative;
+    animation: glitch 1s linear infinite;
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+  }
+
+  .scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    z-index: 999;
+    background: rgba(57, 255, 20, 0.3);
+    opacity: 0.75;
+    animation: scan 7s linear infinite;
+  }
+
+  .matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.07;
+    pointer-events: none;
+  }
+
+  .hacker-box {
+    position: relative;
+    border: 1px solid theme("colors.primary.DEFAULT");
+    box-shadow: 0 0 10px theme("colors.primary.DEFAULT"), inset 0 0 10px theme("colors.primary.DEFAULT");
+    animation: pulse-border 2s infinite;
+  }
+
+  .hacker-text {
+    text-shadow: 0 0 5px theme("colors.primary.DEFAULT");
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+  }
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes scan {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 5px theme("colors.primary.DEFAULT"), inset 0 0 5px theme("colors.primary.DEFAULT");
+  }
+  50% {
+    box-shadow: 0 0 15px theme("colors.primary.DEFAULT"), inset 0 0 15px theme("colors.primary.DEFAULT");
+  }
+  100% {
+    box-shadow: 0 0 5px theme("colors.primary.DEFAULT"), inset 0 0 5px theme("colors.primary.DEFAULT");
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/80;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  will-change: transform;
+}
+
+/* Theme transition */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Disable transitions on theme toggle */
+.disable-transitions * {
+  transition: none !important;
+}
+
+/* Fix for scroll animations */
+.force-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
