@@ -225,7 +225,7 @@ export default function Projects() {
           className="mt-12 text-center"
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/mohan-shil"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 rounded-lg border border-accent/20 bg-accent/5 text-accent font-medium hover:bg-accent/10 transition-all"
