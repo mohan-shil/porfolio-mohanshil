@@ -103,7 +103,7 @@ export default function Hero() {
               transition={{ delay: 1 }}
             >
               <motion.a
-                href="/resume.pdf"
+                href="/QA_CV.pdf"
                 download
                 className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-primary text-white font-medium transition-all hover:bg-primary/90 hacker-box"
                 whileHover={{ scale: 1.05 }}
@@ -132,7 +132,7 @@ export default function Hero() {
               transition={{ delay: 1.2 }}
             >
               <MapPin className="w-5 h-5 mr-2 text-primary" />
-              <span>New York, United States</span>
+              <span>Krakow, Poland 🇵🇱</span>
             </motion.div>
 
             {/* Social Links */}
@@ -143,9 +143,9 @@ export default function Hero() {
               transition={{ delay: 1.4 }}
             >
               {[
-                { icon: <Github className="w-5 h-5" />, href: "https://github.com", label: "GitHub" },
-                { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: <Mail className="w-5 h-5" />, href: "mailto:mohan@example.com", label: "Email" },
+                { icon: <Github className="w-5 h-5" />, href: "https://github.com/mohan-shil", label: "GitHub" },
+                { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/mohan-shil/", label: "LinkedIn" },
+                { icon: <Mail className="w-5 h-5" />, href: "mailto:mohan.shil.007@gmail.com", label: "Email" },
                 { icon: <ExternalLink className="w-5 h-5" />, href: "#projects", label: "Projects" },
               ].map((social, index) => (
                 <motion.a
@@ -177,7 +177,7 @@ export default function Hero() {
             <div className="relative">
               {/* Main image with hacker-style border */}
               <motion.div
-                className="relative w-64 h-64 md:w-80 md:h-80 rounded-md overflow-hidden hacker-box"
+                className="relative w-64 h-64 mt-20 md:w-80 md:h-80 rounded-md overflow-hidden hacker-box"
                 animate={{
                   boxShadow: [
                     "0 0 5px #00ff41, inset 0 0 5px #00ff41",
@@ -207,7 +207,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
         >
-          <span className="text-secondary">$</span> <span className="typing-animation">scroll --direction down</span>
+          
         </motion.div>
       </div>
     </section>
