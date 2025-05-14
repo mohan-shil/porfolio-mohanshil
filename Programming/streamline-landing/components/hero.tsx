@@ -191,11 +191,10 @@ export default function Hero() {
                   repeatType: "reverse",
                 }}
               >
-                <Image src="/diverse-person-portrait.png" alt="Mohan Shil" fill className="object-cover" priority />
+                <Image src="/bg-removed.png" alt="Mohan Shil" fill className="object-cover" priority />
 
                 {/* Overlay with scan lines */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 mix-blend-overlay"></div>
-                <div className="absolute inset-x-0 bottom-0 top-[15%] bg-[linear-gradient(transparent_0%,_transparent_calc(100%_-_1px),_rgba(0,255,65,0.2)_calc(100%_-_1px))] bg-[length:100%_3px]"></div>
+                
               </motion.div>
             </div>
           </motion.div>
