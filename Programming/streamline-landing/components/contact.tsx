@@ -113,12 +113,12 @@ export default function Contact() {
                     href="mailto:mohan@example.com"
                     className="text-muted-foreground hover:text-accent transition-colors duration-300"
                   >
-                    mohan@example.com
+                    mohan.shil.007@gmail.com
                   </a>
                 </div>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 className="flex items-start"
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -135,7 +135,7 @@ export default function Contact() {
                     +1 (234) 567-890
                   </a>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               <motion.div
                 className="flex items-start"
@@ -147,7 +147,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Location</h4>
-                  <p className="text-muted-foreground">New York, United States</p>
+                  <p className="text-muted-foreground">Krakow, Poland 🇵🇱</p>
                 </div>
               </motion.div>
             </div>
@@ -157,8 +157,8 @@ export default function Contact() {
               <h4 className="text-lg font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 {[
-                  { icon: <Github className="w-6 h-6" />, href: "https://github.com", label: "GitHub" },
-                  { icon: <Linkedin className="w-6 h-6" />, href: "https://linkedin.com", label: "LinkedIn" },
+                  { icon: <Github className="w-6 h-6" />, href: "https://github.com/mohan-shil", label: "GitHub" },
+                  { icon: <Linkedin className="w-6 h-6" />, href: "https://www.linkedin.com/in/mohan-shil/", label: "LinkedIn" },
                   { icon: <Twitter className="w-6 h-6" />, href: "https://twitter.com", label: "Twitter" },
                 ].map((social, index) => (
                   <motion.a
