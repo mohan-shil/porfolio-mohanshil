@@ -1,7 +1,8 @@
 # 💼 Mohan Shil – Portfolio Website
 
-This is the source code for my personal portfolio website built with **Next.js**, **Tailwind CSS**, and modern web development tools.  
-It showcases my professional background, skills, and projects.
+This is the source code for my personal portfolio built with Next.js and Tailwind CSS.
+It highlights my work, skills, and experience.
+Feel free to use it as a template for your own portfolio.
 
 🌐 **Live Site**: [mohanshil.vercel.app](https://mohanshil.vercel.app)
 
@@ -9,7 +10,8 @@ It showcases my professional background, skills, and projects.
 
 ## 📸 Preview
 
-![Portfolio Preview](https://user-images.githubusercontent.com/yourusername/your-image.png) <!-- Optional: Add a screenshot if you want -->
+![Screenshot 2025-05-14 at 1 29 35 PM](https://github.com/user-attachments/assets/d3b33a31-ea81-463e-9207-92d1c3db259d)
+
 
 ---
 
