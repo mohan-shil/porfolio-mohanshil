@@ -11,6 +11,9 @@ Feel free to use it as a template for your own portfolio.
 ## 📸 Preview
 
 ![Screenshot 2025-05-14 at 1 29 35 PM](https://github.com/user-attachments/assets/d3b33a31-ea81-463e-9207-92d1c3db259d)
+![Screenshot 2025-05-14 at 1 31 32 PM](https://github.com/user-attachments/assets/b5a51312-d887-4e72-aaa1-1aae5695dce8)
+![Screenshot 2025-05-14 at 1 31 59 PM](https://github.com/user-attachments/assets/e1461848-75be-4077-ba45-491b0627f41b)
+![Screenshot 2025-05-14 at 1 32 13 PM](https://github.com/user-attachments/assets/fea7661d-efc6-43e3-ae6a-14d11e4005bc)
 
 
 ---
