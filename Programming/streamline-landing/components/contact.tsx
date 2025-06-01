@@ -233,7 +233,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full rounded-lg px-4 py-3 bg-accent/5 border border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                      placeholder="John Doe"
+                      placeholder="Mohan Shil"
                       whileFocus={{ scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
@@ -251,7 +251,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full rounded-lg px-4 py-3 bg-accent/5 border border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                      placeholder="john@example.com"
+                      placeholder="mohan@example.com"
                       whileFocus={{ scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
