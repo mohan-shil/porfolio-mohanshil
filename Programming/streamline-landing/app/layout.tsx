@@ -9,8 +9,11 @@ import MatrixBackground from "@/components/matrix-background"
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Mohan Shil | QA Engineer",
+  title: "Mohan Shil | QA Engineer | Test Automation & Manual Testing",
   description: "Portfolio website of Mohan Shil, QA Engineer and Automation Tester",
+  icons: {
+    icon: "/MohanICON.png",
+  },
     generator: 'v0.dev'
 }
 
