@@ -4,28 +4,29 @@ import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes"
-import { ExternalLink, Github, FolderGit2, Code, Search, Tag } from "lucide-react"
+import { ExternalLink, Github, FolderGit2, Code, Search, Tag, FolderOpen } from "lucide-react"
 import Card3D from "@/components/3d-card"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const projects = [
   {
-    title: "E-commerce Test Automation Framework",
+    title: "OXOS",
     description:
-      "Developed a comprehensive test automation framework for an e-commerce platform using Playwright and TypeScript.",
-    image: "/ecommerce-dashboard.png",
-    tags: ["Playwright", "TypeScript", "GitHub Actions", "Page Object Model"],
-    github: "https://github.com",
-    demo: "https://demo-link.com",
+      "Developed a comprehensive test plan for a medical platform using Jira, Ketryx and Github",
+    image: "/Project Images/OXOS.png",
+    tags: ["Jira", "Ketryx", "GitHub Actions", "Test Planning"],
+    github: "https://github.com/oxosmedical",
+    demo: "https://app.oxos.com",
+    drive: "https://drive.google.com/drive/folders/1_pjZBwpVit46w0C4pinB-KMdTI8ZY5hs?usp=sharing",
   },
   {
     title: "Mobile Banking App Testing",
     description:
       "Created an Appium-based test suite for a mobile banking application, covering both Android and iOS platforms.",
     image: "/mobile-banking-app.png",
-    tags: ["Appium", "WebdriverIO", "JavaScript", "Jenkins"],
+    tags: ["Jira", "WebdriverIO", "JavaScript", "Jenkins"],
     github: "https://github.com",
-    demo: "https://demo-link.com",
+    demo: "https://app.oxos.com",
   },
   {
     title: "API Testing Framework",
@@ -207,8 +208,21 @@ export default function Projects() {
                         whileTap={{ scale: 0.95 }}
                       >
                         <ExternalLink className="w-5 h-5" />
-                        <span>Demo</span>
+                        <span>Website</span>
                       </motion.a>
+                      {project.drive && (
+                        <motion.a
+                          href={project.drive}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-accent"
+                          whileHover={{ scale: 1.05, x: 3 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <FolderOpen className="w-5 h-5" />
+                          <span>Details</span>
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 </Card3D>
