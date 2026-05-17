@@ -181,11 +181,18 @@
   .marquee-track {
     display: flex;
     gap: 1.5rem;
-    animation: scroll-horizontal 28s linear infinite;
+    animation: scroll-horizontal 16s linear infinite;
   }
 
   .marquee-track:hover {
     animation-play-state: paused;
+  }
+
+  @media (max-width: 640px) {
+    .marquee-track {
+      gap: 1rem;
+      animation: scroll-horizontal 22s linear infinite;
+    }
   }
 }
 
