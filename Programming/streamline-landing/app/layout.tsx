@@ -4,7 +4,6 @@ import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import { ThemeProvider } from "@/components/theme-provider"
-import MatrixBackground from "@/components/matrix-background"
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
@@ -26,7 +25,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${jetbrainsMono.className} min-h-screen`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <MatrixBackground />
           <Navbar />
           {children}
         </ThemeProvider>
