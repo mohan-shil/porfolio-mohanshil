@@ -46,7 +46,7 @@ export default function TechStack() {
         <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+      <div className="w-full max-w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/5 border border-accent/20 text-accent mb-6">
             <Code className="w-4 h-4 mr-2" />
@@ -62,29 +62,29 @@ export default function TechStack() {
           </p>
         </div>
 
-        {/* Tech Grid - Simple and Modern */}
-        <div className="glass rounded-xl p-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {technologies.map((tech, index) => (
-              <div
-                key={tech.name}
-                className="flex flex-col items-center justify-center p-4 rounded-lg hover:bg-accent/5 transition-all group"
-              >
-                <div className="relative w-12 h-12 mb-3">
-                  <Image
-                    src={tech.icon || "/placeholder.svg"}
-                    alt={tech.name}
-                    width={48}
-                    height={48}
-                    className="object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
+        {/* Tech Carousel - Auto-scroll */}
+        <div>
+          <div className="marquee relative w-full">
+            <div className="marquee-track flex items-center gap-3 py-2.5 sm:gap-6 sm:py-4">
+              {technologies.concat(technologies).map((tech, index) => (
+                <div
+                  key={`${tech.name}-${index}`}
+                  className="group flex flex-col items-center justify-center min-w-[78px] rounded-3xl bg-white/5 p-2.5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white/15 sm:min-w-[110px] sm:p-4"
+                >
+                  <div className="relative w-8 h-8 mb-2 sm:w-12 sm:h-12 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                      src={tech.icon || "/placeholder.svg"}
+                      alt={tech.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-[0.65rem] font-medium text-center text-foreground dark:text-white sm:text-sm transition-colors duration-300 group-hover:text-accent">
+                    {tech.name}
+                  </span>
                 </div>
-                <span className="text-sm font-medium text-center group-hover:text-accent transition-colors">
-                  {tech.name}
-                </span>
-                <span className="text-xs text-muted-foreground mt-1 opacity-70">{tech.category}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

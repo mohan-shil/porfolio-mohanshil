@@ -1,27 +1,38 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { useTypewriter } from "react-simple-typewriter"
-import { useTheme } from "next-themes"
-import { Download, Github, Linkedin, Mail, MapPin, Terminal, ExternalLink } from "lucide-react"
+import { useTypewriter, Cursor } from "react-simple-typewriter"
+import { Download, ExternalLink } from "lucide-react"
+
+const heroMotion = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const cardMotion = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1 },
+}
+
+const textMotion = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+}
 
 export default function Hero() {
   const [loop] = useState(true)
   const [mounted, setMounted] = useState(false)
-  const heroRef = useRef<HTMLElement>(null)
-  const { theme } = useTheme()
 
   const [text] = useTypewriter({
     words: ["QA Engineer", "Automation Tester", "Functional & Mobile Tester"],
-    loop: loop,
-    delaySpeed: 2000,
+    loop,
+    delaySpeed: 2200,
     typeSpeed: 70,
     deleteSpeed: 50,
   })
 
-  // Prevent hydration mismatch
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -29,187 +40,152 @@ export default function Hero() {
   if (!mounted) return null
 
   return (
-    <section
-      ref={heroRef}
+    <motion.section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden"
+      className="relative overflow-hidden px-4 pt-24 pb-16"
+      initial="hidden"
+      animate="visible"
+      variants={heroMotion}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="container mx-auto max-w-6xl px-4 relative z-10">
+      <div className="absolute left-[-4rem] top-16 sparkle sparkle-blue" />
+      <div className="absolute right-[-5rem] top-1/3 sparkle sparkle-pink" />
+      <div className="absolute inset-x-0 top-0 h-80 w-full rounded-full bg-white/5 blur-3xl" />
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-primary/10 to-transparent opacity-50" />
+      <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-accent/10 to-transparent opacity-50" />
+
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left column - Content */}
           <motion.div
             className="order-2 lg:order-1"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            animate="visible"
+            variants={heroMotion}
+            transition={{ duration: 0.75, delay: 0.2 }}
           >
-            {/* Terminal-style header */}
             <motion.div
-              className="font-mono text-sm text-primary mb-6 typing-animation"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
+              className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 mb-6 text-sm text-primary"
+              variants={textMotion}
+              transition={{ duration: 0.6, delay: 0.25 }}
             >
-              <span className="text-secondary">root@system:</span>~${" "}
-              <span className="text-primary">./initialize_profile.sh</span>
+              <span className="mr-3 inline-flex h-2.5 w-2.5 rounded-full bg-primary animate-pulse" />
+              built for modern QA teams
             </motion.div>
 
-            {/* Name with glitch effect */}
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-mono hacker-text"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              className="text-5xl md:text-6xl font-semibold tracking-tight text-foreground dark:text-white mb-6 leading-tight"
+              variants={textMotion}
+              transition={{ duration: 0.7, delay: 0.3 }}
             >
-              <span className="text-white">Hi, I'm </span>
-              <span className="text-gradient glitch">Mohan Shil</span>
+              <motion.span
+                className="block"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                Crafting reliable software with modern
+              </motion.span>
+              <motion.span
+                className="block text-gradient"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                quality systems.
+              </motion.span>
             </motion.h1>
 
-            {/* Typewriter with terminal cursor */}
-            <motion.div
-              className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 font-mono"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
+            <motion.p
+              className="max-w-2xl text-lg leading-8 text-foreground/80 dark:text-muted-foreground mb-10"
+              variants={textMotion}
+              transition={{ duration: 0.7, delay: 0.45 }}
             >
-              <span className="text-secondary">$</span> <span>{text}</span>
-              <span className="terminal-cursor"></span>
+              I design polished QA journeys, automation pipelines, and test frameworks for web and mobile applications.
+              My focus is on fast feedback, stability, and clear results for engineering teams.
+            </motion.p>
+
+            <motion.div
+              className="relative mb-10 flex h-16 items-center justify-center overflow-hidden rounded-full bg-slate-950/5 px-4 text-sm text-foreground/80 dark:bg-white/5 dark:text-muted-foreground"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.55 }}
+            >
+              <motion.span
+                className="absolute left-1/2 top-1/2 h-1 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-primary to-accent opacity-40 blur-xl"
+                animate={{ x: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              />
+              <span className="relative z-10">Delivering smarter QA, faster releases, and better confidence.</span>
             </motion.div>
 
-            {/* Description in terminal style */}
             <motion.div
-              className="text-lg text-muted-foreground mb-8 max-w-xl font-mono"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              className="mb-10 text-2xl sm:text-3xl font-medium text-foreground dark:text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.65 }}
             >
-              <div className="mb-2">
-                <span className="text-secondary">$</span> <span className="text-primary">cat</span> about.txt
-              </div>
-              <p>
-                As a <span className="text-primary">QA Automation Tester</span> with three years of expertise, I
-                specialize in crafting robust, scalable test suites for web and mobile platforms using
-                <span className="text-primary"> Playwright</span>, <span className="text-primary">WebdriverIO</span>,
-                <span className="text-primary"> Cypress</span>, and <span className="text-primary">GitHub Actions</span>
-                .
-              </p>
+              <span className="inline-flex items-center gap-3">
+                <span className="text-primary">&lt;</span>
+                <span>{text}</span>
+                <Cursor cursorColor="#FDE68A" />
+                <span className="text-primary">/&gt;</span>
+              </span>
             </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
                 href="/QA_CV.pdf"
                 download
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-primary text-white font-medium transition-all hover:bg-primary/90 hacker-box"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="button-glow inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white shadow-lg hover:bg-primary/90"
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Download className="w-5 h-5 mr-2" />
-                <span className="font-mono">Download CV</span>
+                Download CV
               </motion.a>
 
               <motion.a
                 href="#contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-primary/20 bg-primary/5 text-primary font-medium transition-all hover:bg-primary/10"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 py-3 text-sm font-semibold text-foreground transition hover:border-secondary/40 hover:bg-secondary/10 dark:text-white"
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <Terminal className="w-5 h-5 mr-2" />
-                <span className="font-mono">Contact Me</span>
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Contact Me
               </motion.a>
-            </motion.div>
-
-            {/* Location */}
-            <motion.div
-              className="flex items-center text-muted-foreground mb-8 font-mono"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-            >
-              <MapPin className="w-5 h-5 mr-2 text-primary" />
-              <span>Krakow, Poland 🇵🇱</span>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              className="flex gap-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.4 }}
-            >
-              {[
-                { icon: <Github className="w-5 h-5" />, href: "https://github.com/mohan-shil", label: "GitHub" },
-                { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/mohan-shil/", label: "LinkedIn" },
-                { icon: <Mail className="w-5 h-5" />, href: "mailto:mohan.shil.007@gmail.com", label: "Email" },
-                { icon: <ExternalLink className="w-5 h-5" />, href: "#projects", label: "Projects" },
-              ].map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target={social.href.startsWith("http") ? "_blank" : undefined}
-                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-primary/20 bg-primary/5 text-primary transition-all hover:bg-primary hover:text-white hacker-box"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.4 + index * 0.1 }}
-                >
-                  {social.icon}
-                  <span className="sr-only">{social.label}</span>
-                </motion.a>
-              ))}
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Right column - Image */}
           <motion.div
             className="order-1 lg:order-2 flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={cardMotion}
+            transition={{ duration: 0.75, delay: 0.35 }}
           >
-            <div className="relative">
-              {/* Main image with hacker-style border */}
+            <div className="relative w-full max-w-lg">
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-secondary/20 via-primary/10 to-accent/10 blur-3xl" />
               <motion.div
-                className="relative w-64 h-64 mt-20 md:w-80 md:h-80 rounded-md overflow-hidden hacker-box"
-                animate={{
-                  boxShadow: [
-                    "0 0 5px #00ff41, inset 0 0 5px #00ff41",
-                    "0 0 20px #00ff41, inset 0 0 20px #00ff41",
-                    "0 0 5px #00ff41, inset 0 0 5px #00ff41",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "reverse",
-                }}
+                className="relative overflow-hidden rounded-[2rem] glass hero-card"
+                whileHover={{ y: -8, rotateZ: 0.5 }}
+                transition={{ type: "spring", stiffness: 120 }}
               >
-                <Image src="/bg-removed.png" alt="Mohan Shil" fill className="object-cover" priority />
-
-                {/* Overlay with scan lines */}
-                
+                <Image src="/Professional-picture.jpg" alt="Mohan Shil" width={640} height={640} className="object-cover w-full h-full" priority />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent px-6 py-8">
+                  <p className="text-sm uppercase tracking-[0.35em] text-secondary/70 mb-2">QA Portfolio</p>
+                  <h2 className="text-2xl font-semibold text-white">Reliable test delivery from concept to launch</h2>
+                </div>
               </motion.div>
+              <motion.div
+                className="absolute -right-8 top-8 h-16 w-16 rounded-full border border-white/20 bg-white/5 blur-2xl"
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.9, delay: 0.6 }}
+              />
             </div>
           </motion.div>
         </div>
-
-        {/* Terminal prompt at bottom */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 font-mono text-primary"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-        >
-          
-        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

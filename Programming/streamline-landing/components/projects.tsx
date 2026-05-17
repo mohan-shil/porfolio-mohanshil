@@ -64,8 +64,8 @@ export default function Projects() {
     <section id="projects" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-1/4 w-72 h-72 rounded-full bg-secondary/15 blur-3xl" />
+        <div className="absolute bottom-24 left-1/4 w-72 h-72 rounded-full bg-accent/15 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
@@ -147,11 +147,11 @@ export default function Projects() {
                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="overflow-hidden"
+                className="overflow-hidden rounded-[2rem] transition-transform duration-500 hover:-translate-y-1"
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
-                <Card3D className="rounded-xl glass">
+                <Card3D className="rounded-[2rem] glass-soft">
                   <div className="relative h-60 overflow-hidden">
                     <Image
                       src={project.image || "/placeholder.svg"}
@@ -254,3 +254,4 @@ export default function Projects() {
     </section>
   )
 }
+
