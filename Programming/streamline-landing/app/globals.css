@@ -173,6 +173,29 @@
     background-image: radial-gradient(circle at top left, rgba(99, 102, 241, 0.08), transparent 15%),
                       radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.08), transparent 15%);
   }
+
+  .marquee {
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    animation: scroll-horizontal 28s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes pulse-border {

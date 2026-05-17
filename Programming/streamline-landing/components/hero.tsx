@@ -80,7 +80,7 @@ export default function Hero() {
             <div className="relative w-full max-w-lg">
               <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-secondary/20 via-primary/10 to-accent/10 blur-3xl" />
               <div className="relative overflow-hidden rounded-[2rem] glass hero-card">
-                <Image src="/bg-removed.png" alt="Mohan Shil" width={640} height={640} className="object-cover w-full h-full" priority />
+                <Image src="/Professional-picture.jpg" alt="Mohan Shil" width={640} height={640} className="object-cover w-full h-full" priority />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent px-6 py-8">
                   <p className="text-sm uppercase tracking-[0.35em] text-secondary/70 mb-2">QA Portfolio</p>
                   <h2 className="text-2xl font-semibold text-white">Reliable test delivery from concept to launch</h2>

@@ -253,11 +253,12 @@ const Hero = () => {
         }}
       >
         <Image
-          src="/logo.jpg"
-          alt="Logo"
+          src="/Professional-picture.jpg"
+          alt="Mohan Shil"
           width={144}
           height={144}
           className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white dark:border-gray-800"
+          priority
         />
 
         {/* Animated glow effect */}
