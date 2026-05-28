@@ -26,7 +26,7 @@ export default function Hero() {
   const [mounted, setMounted] = useState(false)
 
   const [text] = useTypewriter({
-    words: ["QA Engineer", "Automation Tester", "Functional & Mobile Tester"],
+    words: ["QA Engineer", "Automation Tester", "Playwright Specialist", "Mobile Testing Expert", "CI/CD Enthusiast", "Test Architect"],
     loop,
     delaySpeed: 2200,
     typeSpeed: 70,
