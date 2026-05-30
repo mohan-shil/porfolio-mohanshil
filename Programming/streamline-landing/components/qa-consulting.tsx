@@ -18,8 +18,8 @@ export default function ConsultingSection() {
           {/* Left Content */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-medium text-purple-600 dark:text-purple-300">
-              <ShieldCheck size={16} />
-              QA Consulting
+              <ShieldCheck size={24} />
+              QA Consultation
             </div>
 
             <h2 className="mt-6 text-4xl font-bold tracking-tight md:text-6xl">
