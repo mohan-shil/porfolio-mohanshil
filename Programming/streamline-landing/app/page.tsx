@@ -4,6 +4,7 @@ import Projects from "@/components/projects"
 import Experience from "@/components/experience"
 import Contact from "@/components/contact"
 import SkillBars from "@/components/skill-bars"
+import QAConsulting from "@/components/qa-consulting"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <TechStack />
       <SkillBars />
+      <QAConsulting />
       <Projects />
       <Experience />
       <Contact />

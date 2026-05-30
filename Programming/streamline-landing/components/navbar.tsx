@@ -4,11 +4,12 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes"
-import { Home, Layers, FolderGit2, Briefcase, Mail, Menu, X, Sun, Moon, Terminal } from "lucide-react"
+import { Home, Layers, FolderGit2, Briefcase, Mail, Menu, X, Sun, Moon, Terminal, Search } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#home", icon: <Home className="w-5 h-5" /> },
   { name: "Tech Stack", href: "#tech-stack", icon: <Layers className="w-5 h-5" /> },
+  { name: "QA Consulting", href: "#qa-consulting", icon: <Search className="w-5 h-5" /> },
   { name: "Projects", href: "#projects", icon: <FolderGit2 className="w-5 h-5" /> },
   { name: "Experience", href: "#experience", icon: <Briefcase className="w-5 h-5" /> },
   { name: "Contact", href: "#contact", icon: <Mail className="w-5 h-5" /> },
