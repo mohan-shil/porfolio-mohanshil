@@ -4,12 +4,12 @@ export default function ConsultingSection() {
   return (
     <section
       id="consulting"
-      className="relative overflow-hidden py-24 px-6 bg-white text-slate-900 dark:bg-[#05050a] dark:text-white"
+      className="relative overflow-hidden py-20"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute right-[-180px] top-[-120px] h-[520px] w-[520px] rounded-full bg-purple-500/20 blur-3xl dark:bg-purple-600/30" />
-        <div className="absolute left-[-160px] bottom-[-160px] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/20" />
+      {/* Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative mx-auto max-w-7xl">
