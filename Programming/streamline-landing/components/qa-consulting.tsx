@@ -3,7 +3,7 @@ import { ShieldCheck, Zap, Heart, ArrowRight, Bug, Rocket, Gauge } from "lucide-
 export default function ConsultingSection() {
   return (
     <section
-      id="consulting"
+      id="qa-consulting"
       className="relative overflow-hidden py-20"
     >
       {/* Background Elements */}
