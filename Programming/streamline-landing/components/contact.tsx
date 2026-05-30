@@ -339,10 +339,10 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="mt-20 py-6 border-t border-accent/10">
+      <div className="mt-12 py-6 border-t border-accent/10">
         <div className="container mx-auto px-4 text-center">
           <motion.p
-            className="text-muted-foreground"
+            className="text-muted-foreground text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.6 }}
