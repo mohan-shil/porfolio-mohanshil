@@ -7,12 +7,12 @@ import { useTypewriter, Cursor } from "react-simple-typewriter"
 import { Download, ExternalLink, CheckCircle, Bug, Code2 } from "lucide-react"
 
 const clients = [
-  { name: "OXOS", icon: "/clients/oxos.svg" },
-  { name: "InterVuAI", icon: "/clients/intervuai.svg" },
-  { name: "Credvue", icon: "/clients/credvue.svg" },
-  { name: "Redecto", icon: "/clients/redecto.svg" },
-  { name: "Subscribed", icon: "/clients/subscribed.svg" },
-  { name: "Upwork", icon: "/clients/upwork.svg" },
+  { name: "OXOS", icon: "/tech/Clients/OXOS logo.png" },
+  { name: "InterVuAI", icon: "/tech/Clients/InterVuAI logo.png" },
+  { name: "Credvue", icon: "/tech/Clients/Credvue logo.png" },
+  { name: "Redecto", icon: "/tech/Clients/Redecto logo.png" },
+  { name: "Subscribed", icon: "/tech/Clients/Subscribed logo.png" },
+  { name: "Upwork", icon: "/tech/Clients/Upwork logo.png" },
   { name: "Jira", icon: "/clients/jira.svg" },
   { name: "BrowserStack", icon: "/clients/browserstack.svg" },
 ]
@@ -163,8 +163,8 @@ export default function Hero() {
       </div>
 
       {/* Full Width Hero Footer Client Scroller */}
-      <div className="relative z-10 mt-10 w-full border-t border-white/10 bg-background/30 py-4 backdrop-blur-md">
-        <div className="mb-3 flex items-center justify-center gap-4 px-4">
+      <div className="relative z-10 mt-10 w-full border-t border-white/10 bg-background/30 py-2 backdrop-blur-md">
+        <div className="mb-2 flex items-center justify-center gap-4 px-4">
           <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary/40" />
           <p className="text-center text-[11px] uppercase tracking-[0.28em] text-foreground/50 dark:text-white/50">
             Clients I Have Worked With
@@ -176,20 +176,24 @@ export default function Hero() {
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-background to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-background to-transparent" />
 
-          <div className="client-marquee flex w-max">
+          <div className="client-marquee flex w-max items-center">
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="mx-6 flex min-w-[140px] items-center justify-center gap-2 opacity-75 transition hover:opacity-100"
+                className="mx-4 flex min-w-[140px] items-center justify-center gap-2 py-0 opacity-75 transition hover:opacity-100"
               >
                 <Image
                   src={client.icon}
                   alt={client.name}
-                  width={26}
-                  height={26}
-                  className="h-6 w-6 object-contain"
+                  width={client.name === "OXOS" ? 120 : 26}
+                  height={client.name === "OXOS" ? 120 : 26}
+                  className={
+                    client.name === "OXOS"
+                      ? "h-28 w-28 object-contain mt-0 my-0"
+                      : "h-6 w-6 object-contain mt-0 my-0"
+                  }
                 />
-                <span className="text-sm font-medium text-foreground/70 dark:text-white/70">
+                <span className="text-sm leading-none font-medium text-foreground/70 dark:text-white/70">
                   {client.name}
                 </span>
               </div>
