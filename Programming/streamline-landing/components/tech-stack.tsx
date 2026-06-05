@@ -98,7 +98,9 @@ export default function TechStack() {
             transform: translateX(0);
           }
         }
-
+        .marquee-right {
+          animation: marquee-right 50s linear infinite;
+        }  
         .marquee-left:hover,
         .marquee-right:hover {
           animation-play-state: paused;
