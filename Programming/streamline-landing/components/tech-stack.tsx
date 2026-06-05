@@ -10,9 +10,6 @@ const technologies = [
   { name: "React", icon: "/tech/react.svg", category: "Framework" },
   { name: "Next.js", icon: "/tech/nextjs.svg", category: "Framework" },
   { name: "Playwright", icon: "/tech/Playwright--Streamline-Svg-Logos.svg", category: "Testing" },
-  { name: "Selenium", icon: "/tech/selenium-svgrepo-com.svg", category: "Testing" },
-  { name: "Cypress", icon: "/tech/cypress.svg", category: "Testing" },
-  { name: "WebdriverIO", icon: "/tech/webdriverio.svg", category: "Testing" },
   { name: "GitHub", icon: "/tech/github-actions.svg", category: "DevOps" },
   { name: "Jenkins", icon: "/tech/jenkins.svg", category: "DevOps" },
   { name: "Docker", icon: "/tech/docker.svg", category: "DevOps" },
@@ -36,6 +33,9 @@ const tools = [
   { name: "Android", icon: "tech/Android.svg", category: "Platform" },
   { name: "Apple", icon: "/tech/Apple--Streamline-Svg-Logos.svg", category: "Platform" },
   { name: "AWS", icon: "/tech/aws.svg", category: "Cloud" },
+  { name: "Selenium", icon: "/tech/selenium-svgrepo-com.svg", category: "Testing" },
+  { name: "Cypress", icon: "/tech/cypress.svg", category: "Testing" },
+  { name: "WebdriverIO", icon: "/tech/webdriverio.svg", category: "Testing" },
 ]
 
 export default function TechStack() {
