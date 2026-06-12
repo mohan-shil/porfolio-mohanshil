@@ -8,13 +8,13 @@ import { Download, ExternalLink, CheckCircle, Bug, Code2 } from "lucide-react"
 
 const clients = [
   { name: "OXOS", icon: "/tech/Clients/OXOS logo.png" },
-  { name: "InterVuAI", icon: "/tech/Clients/InterVuAI logo.png" },
-  { name: "Credvue", icon: "/tech/Clients/Credvue logo.png" },
-  { name: "Redecto", icon: "/tech/Clients/Redecto logo.png" },
-  { name: "Subscribed", icon: "/tech/Clients/Subscribed logo.png" },
-  { name: "Upwork", icon: "/tech/Clients/Upwork logo.png" },
-  { name: "Jira", icon: "/clients/jira.svg" },
-  { name: "BrowserStack", icon: "/clients/browserstack.svg" },
+  { name: "InterVuAI", icon: "/tech/Playwright--Streamline-Svg-Logos.svg" },
+  { name: "Credvue", icon: "/tech/Browserstack--Streamline-Svg-Logos.svg" },
+  { name: "Redecto", icon: "/tech/azure-icon-svgrepo-com.svg" },
+  { name: "Subscribed", icon: "/tech/github-actions.svg" },
+  { name: "Upwork", icon: "/tech/docker.svg" },
+  { name: "Jira", icon: "/tech/jira-svgrepo-com.svg" },
+  { name: "BrowserStack", icon: "/tech/Browserstack--Streamline-Svg-Logos.svg" },
 ]
 
 export default function Hero() {

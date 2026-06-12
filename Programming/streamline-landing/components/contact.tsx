@@ -225,17 +225,16 @@ export default function Contact() {
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Your Name
                     </label>
-                    <motion.input
+                    <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      autoComplete="name"
                       className="w-full rounded-lg px-4 py-3 bg-accent/5 border border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       placeholder="Mohan Shil"
-                      whileFocus={{ scale: 1.01 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
                   </div>
 
@@ -243,17 +242,16 @@ export default function Contact() {
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Your Email
                     </label>
-                    <motion.input
+                    <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      autoComplete="email"
                       className="w-full rounded-lg px-4 py-3 bg-accent/5 border border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       placeholder="mohan@example.com"
-                      whileFocus={{ scale: 1.01 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
                   </div>
 
@@ -261,17 +259,16 @@ export default function Contact() {
                     <label htmlFor="subject" className="block text-sm font-medium mb-2">
                       Subject
                     </label>
-                    <motion.input
+                    <input
                       type="text"
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       required
+                      autoComplete="off"
                       className="w-full rounded-lg px-4 py-3 bg-accent/5 border border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       placeholder="Job Opportunity"
-                      whileFocus={{ scale: 1.01 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
                   </div>
 
@@ -279,18 +276,17 @@ export default function Contact() {
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Message
                     </label>
-                    <motion.textarea
+                    <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
                       rows={5}
+                      autoComplete="off"
                       className="w-full rounded-lg px-4 py-3 bg-accent/5 border border-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       placeholder="Your message here..."
-                      whileFocus={{ scale: 1.01 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    ></motion.textarea>
+                    ></textarea>
                   </div>
 
                   <motion.button
