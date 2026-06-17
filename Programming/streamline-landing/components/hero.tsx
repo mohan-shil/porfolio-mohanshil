@@ -138,14 +138,23 @@ export default function Hero() {
             transition={{ delay: 0.15 }}
           >
             <div className="grid gap-5">
-              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
-                <p className="text-4xl font-bold text-gradient">4+</p>
-                <p className="mt-2 text-sm text-foreground/70 dark:text-white/60">
-                  Experience
-                </p>
+              <div className="grid min-h-[12px] grid-cols-2 gap-4">
+                <div className="flex flex-col justify-center rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-md">
+                  <p className="text-4xl font-bold text-gradient">4+</p>
+                  <p className="mt-2 text-sm text-foreground/70 dark:text-white/60">
+                    Years
+                  </p>
+                </div>
+
+                <div className="flex flex-col justify-center rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-md">
+                  <p className="text-4xl font-bold text-gradient">20+</p>
+                  <p className="mt-2 text-sm text-foreground/70 dark:text-white/60">
+                    Clients
+                  </p>
+                </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
+              <div className="rounded-[1.5rem] h-[166px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
                 <p className="text-4xl font-bold text-gradient">35+</p>
                 <p className="mt-2 text-sm text-foreground/70 dark:text-white/60">
                   Projects
@@ -153,7 +162,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="row-span-2 rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-primary/10 via-white/[0.04] to-accent/10 p-6 backdrop-blur-md">
+            <div className="row-span-2 h-[296px] rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-primary/10 via-white/[0.04] to-accent/10 p-6 backdrop-blur-md">
               <div className="flex h-full flex-col justify-center">
                 <p className="text-5xl font-bold text-gradient">98%</p>
                 <p className="mt-3 text-sm leading-6 text-foreground/70 dark:text-white/60">
