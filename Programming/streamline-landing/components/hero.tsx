@@ -18,17 +18,34 @@ const clients = [
 ]
 
 const techStack = [
-  "Playwright",
-  "TypeScript",
-  "Postman",
-  "GitHub Actions",
-  "Jira",
-  "BrowserStack",
-  "Docker",
-  "Azure",
-  "Mobile Testing",
-  "API Testing",
-  "CI/CD",
+  { name: "JavaScript", icon: "/tech/javascript.svg" },
+  { name: "TypeScript", icon: "/tech/typescript.svg" },
+  { name: "React", icon: "/tech/react.svg" },
+  { name: "Next.js", icon: "/tech/nextjs.svg" },
+  { name: "Playwright", icon: "/tech/Playwright--Streamline-Svg-Logos.svg" },
+  { name: "GitHub", icon: "/tech/github-actions.svg" },
+  { name: "Jenkins", icon: "/tech/jenkins.svg" },
+  { name: "Docker", icon: "/tech/docker.svg" },
+  { name: "Git", icon: "/tech/git.svg" },
+  { name: "Node.js", icon: "/tech/nodejs.svg" },
+  { name: "Python", icon: "/tech/python.svg" },
+  { name: "Jira", icon: "/tech/jira-svgrepo-com.svg" },
+  { name: "Azure", icon: "/tech/azure-icon-svgrepo-com.svg" },
+  { name: "Kubernetes", icon: "/tech/kubernetes-svgrepo-com.svg" },
+  { name: "CSS", icon: "/tech/Css-3--Streamline-Svg-Logos.svg" },
+  { name: "Angular", icon: "/tech/angular.svg" },
+  { name: "MongoDB", icon: "/tech/mongodb.svg" },
+  { name: "Postman", icon: "/tech/Postman-Icon--Streamline-Svg-Logos.svg" },
+  { name: "BrowserStack", icon: "/tech/Browserstack--Streamline-Svg-Logos.svg" },
+  { name: "Datadog", icon: "/tech/datadog.svg" },
+  { name: "Google Cloud", icon: "/tech/google-cloud.svg" },
+  { name: "Slack", icon: "/tech/slack.svg" },
+  { name: "Android", icon: "/tech/Android.svg" },
+  { name: "Apple", icon: "/tech/Apple--Streamline-Svg-Logos.svg" },
+  { name: "AWS", icon: "/tech/aws.svg" },
+  { name: "Selenium", icon: "/tech/selenium-svgrepo-com.svg" },
+  { name: "Cypress", icon: "/tech/cypress.svg" },
+  { name: "WebdriverIO", icon: "/tech/webdriverio.svg" },
 ]
 
 export default function Hero() {
@@ -154,7 +171,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] h-[166px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
+              <div className="h-[166px] rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
                 <p className="text-4xl font-bold text-gradient">35+</p>
                 <p className="mt-2 text-sm text-foreground/70 dark:text-white/60">
                   Projects
@@ -173,26 +190,56 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="mt-8">
-          <p className="mb-3 text-sm uppercase tracking-[0.25em] text-foreground/60 dark:text-white/50">
-            Tech Stack
-          </p>
+        {/* Tech Stack + Social Bento */}
+        <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr_1.7fr]">
+          <div className="lg:col-span-3">
+            <p className="mb-3 text-sm uppercase tracking-[0.25em] text-foreground/60 dark:text-white/50">
+              Tech Stack
+            </p>
 
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] py-4 backdrop-blur-md">
-            <div className="tech-marquee flex w-max items-center">
-              {[...techStack, ...techStack].map((tech, index) => (
-                <div
-                  key={`${tech}-${index}`}
-                  className="mx-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm font-medium text-foreground/70 dark:text-white/70"
-                >
-                  {tech}
-                </div>
-              ))}
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] py-2 backdrop-blur-md">
+              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-background to-transparent sm:w-28" />
+              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-background to-transparent sm:w-28" />
+
+              <div className="tech-marquee flex w-max items-center">
+                {[...techStack, ...techStack, ...techStack].map((tech, index) => (
+                  <div
+                    key={`${tech.name}-${index}`}
+                    title={tech.name}
+                    className="mx-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] transition hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/10"
+                  >
+                    <Image
+                      src={tech.icon}
+                      alt={tech.name}
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_1fr_1fr_1.7fr]">
+          <a
+            href="https://www.upwork.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="group row-span-2 rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-primary/10 via-white/[0.04] to-accent/10 p-7 backdrop-blur-md transition hover:border-primary/30 lg:col-start-4 lg:row-span-2"
+          >
+            <div className="flex h-full min-h-[250px] flex-col justify-center">
+              <p className="text-sm uppercase tracking-[0.25em] text-primary">
+                Freelance profile
+              </p>
+              <h3 className="mt-3 text-3xl font-semibold text-foreground dark:text-white">
+                Upwork
+              </h3>
+              <p className="mt-3 text-sm text-foreground/65 dark:text-white/60">
+                QA testing, automation, mobile testing, and release support.
+              </p>
+            </div>
+          </a>
+
           <a
             href="https://github.com/"
             target="_blank"
@@ -225,25 +272,6 @@ export default function Hero() {
             <h3 className="text-xl font-semibold text-foreground dark:text-white">
               Consultancy
             </h3>
-          </a>
-
-          <a
-            href="https://www.upwork.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="group rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-primary/10 via-white/[0.04] to-accent/10 p-7 backdrop-blur-md transition hover:border-primary/30"
-          >
-            <div className="flex h-full min-h-[130px] flex-col justify-center">
-              <p className="text-sm uppercase tracking-[0.25em] text-primary">
-                Freelance profile
-              </p>
-              <h3 className="mt-3 text-3xl font-semibold text-foreground dark:text-white">
-                Upwork
-              </h3>
-              <p className="mt-3 text-sm text-foreground/65 dark:text-white/60">
-                QA testing, automation, mobile testing, and release support.
-              </p>
-            </div>
           </a>
         </div>
       </div>
@@ -290,7 +318,7 @@ export default function Hero() {
         }
 
         .tech-marquee {
-          animation: tech-marquee 24s linear infinite;
+          animation: tech-marquee 36s linear infinite;
         }
 
         @keyframes client-marquee {
